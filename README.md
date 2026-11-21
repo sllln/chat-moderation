@@ -7,7 +7,7 @@ messages and logs the response time of every message against a **50 ms budget on
 The task is solved with a ladder of models, from a rule-based baseline to a quantized Transformer,
 all evaluated on the same held-out test set.
 
-- Demo video: _link will be added_
+- Demo video: https://youtu.be/pD6nY0BpxTE
 - Models on the Hugging Face Hub: https://huggingface.co/selliinn/chat-moderation-tr-models
 
 ---
