@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Trained models: too large for GitHub, they live on the Hugging Face Hub
+# (downloaded automatically by src/download_models.py)
+models/
+
+# Data splits: re-created by src/prepare_data.py
+data/train.csv
+data/validation.csv
+data/test.csv
+
+# Per-tweet predictions contain the full test tweets; not needed in the repo
+results/test_predictions.csv
+
+# Editor / OS files
+.vscode/
+.DS_Store
+Thumbs.db
