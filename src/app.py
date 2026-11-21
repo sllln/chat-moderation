@@ -37,8 +37,12 @@ EXAMPLES = [
 print("Loading models ...")
 CLASSIFIERS = {model.name: model for model in load_all_classifiers()}
 LEXICON = next(m for m in CLASSIFIERS.values() if isinstance(m, LexiconClassifier))
-for model in CLASSIFIERS.values():          # warm-up, so the first message is not slow
-    model.predict_proba("merhaba")
+# Warm-up: a few messages of different lengths, so that the first real
+# message in the chat is not slower than the others.
+WARMUP_MESSAGES = ["merhaba", *EXAMPLES, " ".join(EXAMPLES)]
+for model in CLASSIFIERS.values():
+    for message in WARMUP_MESSAGES:
+        model.predict_proba(message)
 print("Ready.")
 
 
